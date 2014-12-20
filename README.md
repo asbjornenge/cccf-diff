@@ -1,6 +1,6 @@
 # cccf-diff
 
-This module can diff two [cccf](https://github.com/asbjornenge/cccf) configs. It takes current and a wanted state and returns an object of containers to *add*, *remove* and *keep* in order to get you there.
+This module can diff two [cccf](https://github.com/asbjornenge/cccf) configs / states. It takes current and a wanted state and returns an object of containers to *add*, *remove* and *keep* in order to get you there.
 
 ## Install
 

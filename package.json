@@ -1,0 +1,32 @@
+{
+  "name": "cccf-diff",
+  "version": "1.0.0",
+  "description": "Diff two cccf configs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R nyan -w --check-leaks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asbjornenge/cccf-diff.git"
+  },
+  "keywords": [
+    "cccf"
+  ],
+  "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/asbjornenge/cccf-diff/issues"
+  },
+  "homepage": "https://github.com/asbjornenge/cccf-diff",
+  "devDependencies": {
+    "cccf-scale": "^1.0.0",
+    "clone": "^0.2.0"
+  },
+  "dependencies": {
+    "cccf": "^2.1.0"
+  }
+}

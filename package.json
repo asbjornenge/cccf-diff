@@ -1,6 +1,6 @@
 {
   "name": "cccf-diff",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Diff two cccf configs",
   "main": "index.js",
   "directories": {
@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/asbjornenge/cccf-diff",
   "devDependencies": {
-    "cccf-scale": "^1.0.0",
+    "cccf-scale": "^2.0.0",
     "clone": "^0.2.0"
   },
   "dependencies": {
-    "cccf": "^2.1.0"
+    "cccf": "^3.0.0"
   }
 }

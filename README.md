@@ -14,6 +14,10 @@ This module can diff two [cccf](https://github.com/asbjornenge/cccf) configs / s
 
 ## Changelog
 
+### 2.0.0
+
+* Using cccf v3.0.0
+
 ### 1.0.0
 
 * Initial release

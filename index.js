@@ -1,25 +1,10 @@
 var cccf = require('cccf')
 
-var CCCFException = function(message, dump) {
-	this.message  = message
-	this.dump     = dump
-	this.toString = function() {
-		return this.message + JSON.dumps(this.dump) // niceify this dump so it's useful!!
-	}
-}
-
-var unify = function(config) {
-	return (config instanceof Array) ? config : [config]
-}
-var validate = function(config) {
-	var err = cccf.validate(config)
-	if (err) throw new CCCFException('Unable to verify config', err)
-	return config
-}
+var unify = function(config) { return (config instanceof Array) ? config : [config] }
 
 module.exports = function(current, wanted) {
-	current = validate(unify(current))
-	wanted  = validate(unify(wanted))
+	current = cccf.validate(unify(current))
+	wanted  = cccf.validate(unify(wanted))
 
 	var currentIds = current.map(function(container) { return container.id })
 	var wantedIds = wanted.map(function(container)   { return container.id })

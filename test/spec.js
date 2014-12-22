@@ -1,4 +1,5 @@
 var assert  = require('assert')
+var cccf    = require('cccf')
 var example = require('cccf/example.json')
 var cs      = require('cccf-scale')
 var clone   = require('clone')
@@ -26,16 +27,26 @@ describe('cccd-diff', function() {
 	})
 
 	it('works with scales', function() {
-		var _wanted      = clone(wanted)
+		var _wanted = clone(wanted)
 		_wanted[1].scale = 5
-		var scaled = cs.up(_wanted)
-		var diff = cdiff(current, scaled)
+		var upscaled = cs.up(_wanted)
+		var diff = cdiff(current, upscaled)
 		assert(typeof diff == 'object')
 		assert(diff.keep.length == 1)
 		assert(diff.add.length == 5)
 		assert(diff.remove.length == 1)
+		var downscaled = cs.down(upscaled)
+		var diff = cdiff(upscaled, downscaled)
+		assert(typeof diff == 'object')
+		assert(diff.keep.length == 2)
+		assert(diff.add.length == 0)
+		assert(diff.remove.length == 4)
 	})
 
-	// it validates ... ?
+	it('validates input', function() {
+		try { cdiff({},[]) } catch(e) {
+			assert(e instanceof cccf.exception)
+		}
+	})
 
 })

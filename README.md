@@ -10,11 +10,14 @@ This module can diff two [cccf](https://github.com/asbjornenge/cccf) configs / s
 
 ## Use
 
-	var cdiff = require('cccf-diff')
-	var diff  = cdiff.diff(current, wanted)
+	var diff = require('cccf-diff')(current, wanted)
 	// => { add : [], remove : [], keep : [] }
 
 ## Changelog
+
+### 2.0.1
+
+* Updated docs
 
 ### 2.0.0
 

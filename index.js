@@ -2,6 +2,7 @@ var cccf = require('cccf')
 
 var unify     = function(config)    { return (config instanceof Array) ? config : [config] }
 var stringify = function(container) { return JSON.stringify(container) }
+var objectify = function(container) { return JSON.parse(container) }
 
 module.exports = function(current, wanted) {
 	current = cccf.validate(unify(current)).map(stringify)
@@ -16,8 +17,8 @@ module.exports = function(current, wanted) {
 	// console.log('remove', remove)
 
 	return {
-		add : add,
-		keep : keep,
-		remove : remove
+		add : add.map(objectify),
+		keep : keep.map(objectify),
+		remove : remove.map(objectify)
 	}
 }

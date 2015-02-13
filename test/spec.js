@@ -49,4 +49,12 @@ describe('cccd-diff', function() {
 		}
 	})
 
+    it('looks at all the properties', function() {
+        var _current = [clone(example)]
+        var _wanted  = [clone(example)]; _wanted[0].image = _wanted[0].image+':1.2.3'
+        var diff     = cdiff(_current, _wanted)
+        assert(diff.add.length == 1)
+        assert(diff.remove.length == 1)
+    })
+
 })

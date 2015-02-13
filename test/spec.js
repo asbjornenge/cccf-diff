@@ -54,6 +54,7 @@ describe('cccd-diff', function() {
         var _wanted  = [clone(example)]; _wanted[0].image = _wanted[0].image+':1.2.3'
         var diff     = cdiff(_current, _wanted)
         assert(diff.add.length == 1)
+        assert(diff.keep.length == 0)
         assert(diff.remove.length == 1)
     })
 

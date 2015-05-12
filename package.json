@@ -1,6 +1,6 @@
 {
   "name": "cccf-diff",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Diff two cccf configs",
   "main": "index.js",
   "directories": {

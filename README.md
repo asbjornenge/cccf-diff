@@ -15,6 +15,10 @@ This module can diff two [cccf](https://github.com/asbjornenge/cccf) configs / s
 
 ## Changelog
 
+### 3.0.1
+
+* Handles properties in random order (does a sort pre diff)
+
 ### 3.0.0
 
 * Now looking at all properties of the containers (not just the id's)

@@ -58,4 +58,16 @@ describe('cccd-diff', function() {
         assert(diff.remove.length == 1)
     })
 
+    it('can handle properties in random order', function() {
+        var _current = [clone(example)]
+        var _wanted  = [clone(example)]
+        var env = _current[0].env
+        delete _current[0].env
+        _current[0].env = env
+        var diff = cdiff(_current, _wanted)
+        assert(diff.add.length == 0)
+        assert(diff.keep.length == 1)
+        assert(diff.remove.length == 0)
+    })
+
 })

@@ -15,6 +15,10 @@ This module can diff two [cccf](https://github.com/asbjornenge/cccf) configs / s
 
 ## Changelog
 
+### 3.0.2
+
+* Patched a global variable leak
+
 ### 3.0.1
 
 * Handles properties in random order (does a sort pre diff)

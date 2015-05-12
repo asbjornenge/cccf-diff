@@ -4,8 +4,8 @@ var unify     = function(config)    { return (config instanceof Array) ? config 
 var uid       = function(container) { return JSON.stringify(container).split('').sort().join('') }
 
 module.exports = function(current, wanted) {
-	_current = cccf.validate(unify(current)).map(uid)
-	_wanted  = cccf.validate(unify(wanted)).map(uid)
+	var _current = cccf.validate(unify(current)).map(uid)
+	var _wanted  = cccf.validate(unify(wanted)).map(uid)
 
 	var keep   = wanted.filter(function(container)  { return _current.indexOf(uid(container)) >= 0 }) // keep   - in wanted & current
     var _keep  = keep.map(uid)
